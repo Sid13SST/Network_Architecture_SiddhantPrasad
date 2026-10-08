@@ -1,0 +1,8 @@
+# Keep bytes exact: HEXDUMP.md and the tests depend on www/ being served unchanged.
+*           text=auto eol=lf
+*.cmd       text eol=crlf
+bserve      text eol=lf
+bcurl       text eol=lf
+www/**      -text
+*.png       binary
+*.pdf       binary

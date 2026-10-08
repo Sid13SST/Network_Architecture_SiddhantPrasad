@@ -1,0 +1,8 @@
+#!/bin/sh
+"exec" "$(command -v python3 || command -v python)" "$0" "$@"
+# The line above is valid sh *and* valid Python (string concatenation), so
+# ./bserve runs wherever python3 or python is on PATH. Python 3.8+, stdlib only.
+import os, sys
+sys.path.insert(0, os.path.dirname(os.path.realpath(__file__)))
+from bhtp.server import main
+sys.exit(main())
